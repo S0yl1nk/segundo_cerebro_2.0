@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Segundo Cerebro Móvil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 p-4">
+    <header class="mb-4">
+        <h1 class="text-2xl font-bold text-indigo-700">Segundo Cerebro</h1>
+        <p id="motivationalQuote" class="italic text-sm text-gray-600">Cargando frase...</p>
+        <p id="dailyFocusTip" class="mt-1 text-indigo-600 font-medium">Consejo del día</p>
+    </header>
+
+    <section class="my-4">
+        <h2 class="text-lg font-semibold mb-2">Inicio Rápido</h2>
+        <ul class="list-disc list-inside text-sm">
+            <li><strong>Tareas pendientes:</strong> Revisar matemáticas</li>
+            <li><strong>Meta activa:</strong> Terminar proyecto de música</li>
+            <li><strong>Pomodoro:</strong> 25 minutos restantes</li>
+        </ul>
+    </section>
+
+    <script>
+        const frases = [
+            "El éxito es la suma de pequeños esfuerzos repetidos cada día.",
+            "No te detengas hasta estar orgulloso.",
+            "La disciplina supera la motivación.",
+        ];
+        const consejos = [
+            "Cierra apps que no necesitas antes de estudiar.",
+            "Divide tareas grandes en pasos pequeños.",
+            "Usa Pomodoro para mantenerte enfocado.",
+            "Apunta ideas distractoras en una hoja y sigue.",
+            "Haz un repaso rápido antes de estudiar un tema nuevo.",
+        ];
+        const quoteEl = document.getElementById("motivationalQuote");
+        const tipEl = document.getElementById("dailyFocusTip");
+        if (quoteEl) quoteEl.textContent = frases[new Date().getDate() % frases.length];
+        if (tipEl) tipEl.textContent = consejos[new Date().getDate() % consejos.length];
+    </script>
+</body>
+</html>
